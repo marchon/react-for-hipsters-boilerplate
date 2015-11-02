@@ -1,9 +1,11 @@
 // polyfills
-require('es6-promise').polyfill();
-require('whatwg-fetch');
+System.import('es6-promise').then(promise => {
+  promise.polyfill();
+  System.import('whatwg-fetch');
+});
 
 // normalize.css
-require('normalize.css');
+System.import('normalize.css');
 
 // require your app here
-require('debug-dude')('service').warn('require your app entry point plz');
+System.import('debug-dude').then(dude => dude('service').warn('require your app entry point plz'));
